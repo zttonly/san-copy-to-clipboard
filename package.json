@@ -6,6 +6,33 @@
   "config": {
     "component": "CopyToClipboard"
   },
+  "lint-staged": {
+    "!(example|lib|build|__mocks__)/**/*.js": [
+      "eslint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+    ],
+    "rules": {
+        "header-max-length": [
+            2,
+            "always",
+            120
+        ],
+        "subject-case": [
+            0,
+            "always",
+            "sentence-case"
+        ]
+    }
+},
   "scripts": {
     "build": "rimraf dist && yarn dist && yarn min",
     "start": "yarn build && cross-env NODE_ENV=development webpack-dev-server --config scripts/webpack.dev.conf.js",
@@ -28,6 +55,9 @@
     "@babel/core": "^7.6.0",
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/core": "^9.1.2",
+    "@commitlint/travis-cli": "^9.1.2",
     "@ecomfe/eslint-config": "^5.0.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
@@ -37,6 +67,8 @@
     "eslint-plugin-babel": "^5.3.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.3.0",
     "rimraf": "^3.0.0",
     "san": "^3.7.8",
     "san-loader": "^0.0.7",
