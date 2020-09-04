@@ -9,7 +9,7 @@ Based on [copy-to-clipboard](https://npm.im/copy-to-clipboard)
 ### NPM
 
 ```sh
-npm install --save san san-copy-to-clipboard
+npm install --save san-copy-to-clipboard
 ```
 
 Don't forget to manually install peer dependencies (`san`) if you use npm@3.
@@ -18,7 +18,7 @@ Don't forget to manually install peer dependencies (`san`) if you use npm@3.
 ### 1998 Script Tag:
 ```html
 <script src="https://unpkg.com/san@3.0.1/dist/san.js"></script>
-<script src="https://unpkg.com/san-copy-to-clipboard/build/san-copy-to-clipboard.js"></script>
+<script src="https://unpkg.com/san-copy-to-clipboard@0.0.1/build/san-copy-to-clipboard.js"></script>
 (Module exposed as `CopyToClipboard`)
 ```
 

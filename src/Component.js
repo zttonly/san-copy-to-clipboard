@@ -33,4 +33,3 @@ export const CopyToClipboard = san.defineComponent({
         </div>
     `
 });
-
